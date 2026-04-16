@@ -19,6 +19,12 @@ export const apiSlice = createApi({
             providesTags: ['transaction']
         }),
 
+        // get transactions
+        getTransactions : builder.query({
+            query : () => '/api/transaction',
+            providesTags: ['transaction']
+        }),
+
         // add new Transaction
         addTransaction : builder.mutation({
             query : (initialTransaction) => ({

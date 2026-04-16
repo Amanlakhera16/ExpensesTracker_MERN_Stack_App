@@ -24,19 +24,28 @@ export default function Graph() {
 
 
   return (
-    <div className="flex justify-content max-w-xs mx-auto">
-        <div className="item">
+    <div className="panel-card graph-panel">
+        <div className="section-header">
+            <div>
+                <p className="section-eyebrow">Spending overview</p>
+                <h2>See your money at a glance.</h2>
+            </div>
+            <span className="section-badge section-badge-strong">Live chart</span>
+        </div>
+
+        <div className="chart-card">
             <div className="chart relative">
                 {graphData}
-                <h3 className='mb-4 font-bold title'>Total
-                    <span className='block text-3xl text-emerald-400'>${getTotal(data) ?? 0}</span>
-                </h3>
-            </div>   
+                <div className='chart-center'>
+                    <span className='chart-label'>Total</span>
+                    <span className='chart-value'>${getTotal(data) ?? 0}</span>
+                    <span className='chart-note'>Across all categories</span>
+                </div>
+            </div>
+        </div>
 
-            <div className="flex flex-col py-10 gap-4">
-                {/* Labels */}
-                <Labels></Labels>
-            </div> 
+        <div className="label-stack">
+            <Labels />
         </div>
     </div>
   )

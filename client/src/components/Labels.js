@@ -27,12 +27,12 @@ export default function Labels() {
 function LabelComponent({ data }){
     if(!data) return <></>;
     return (
-        <div className="labels flex justify-between">
-            <div className="flex gap-2">
-                <div className='w-2 h-2 rounded py-3' style={{background: data.color ?? '#f9c74f'}}></div>
-                <h3 className='text-md'>{data.type ?? ''}</h3>
+        <div className="label-row">
+            <div className="label-left">
+                <span className='label-dot' style={{background: data.color ?? '#f9c74f'}}></span>
+                <h3 className='label-title'>{data.type ?? ''}</h3>
             </div>
-            <h3 className='font-bold'>{Math.round(data.percent) ?? 0}%</h3>
+            <h3 className='label-percent'>{Math.round(data.percent) ?? 0}%</h3>
         </div>
     )
 }
